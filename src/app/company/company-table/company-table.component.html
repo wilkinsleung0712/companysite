@@ -1,0 +1,22 @@
+ <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>CITY</th>
+        <th>EMAIL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let company of companies">
+        <td>{{company.id}}</td>
+        <td>{{company.name}}</td>
+        <td>{{company.city}}</td>
+        <td>{{company.email}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="editCompanyEventNotification.emit(company.id)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteCompanyEventNotification.emit(company.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

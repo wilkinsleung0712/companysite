@@ -1,0 +1,7 @@
+<div class="container">
+  <p>
+    company-list works! {{companies | json}}
+  </p>
+
+  <bfd-company-table [companies]='companies' (editCompanyEventNotification)="editCompany($event)" (deleteCompanyEventNotification)="deleteCompany($event)"></bfd-company-table>
+</div>

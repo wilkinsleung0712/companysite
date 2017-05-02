@@ -1,5 +1,7 @@
+import { Company } from '../../model/Company';
+
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Company } from "app/company/Company";
+
 
 @Component({
   selector: 'bfd-company-table',
@@ -9,10 +11,10 @@ import { Company } from "app/company/Company";
 export class CompanyTableComponent implements OnInit {
   
   // take an array from the caller who calling this directive
-  @Input() companies:Company[];
+  @Input() companies;
   // output a event binding for caller who intercept with this event
   @Output() editCompanyEventNotification : EventEmitter<any> = new EventEmitter();
-   @Output() deleteCompanyEventNotification : EventEmitter<any> = new EventEmitter();
+  @Output() deleteCompanyEventNotification : EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {

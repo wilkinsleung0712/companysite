@@ -1,6 +1,6 @@
 export interface Company {
     id:number;
     name:string;
-    city:string;
+    city?:string;
     email:string;
 }

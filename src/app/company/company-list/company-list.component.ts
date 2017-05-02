@@ -1,5 +1,7 @@
+import { CompanyService } from './../company.service';
 import { Component, OnInit } from '@angular/core';
-import { Company } from '../Company';
+import { Company } from '../../model/Company';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'bfd-company-list',
@@ -8,43 +10,28 @@ import { Company } from '../Company';
 })
 export class CompanyListComponent implements OnInit {
 
-  companies: Company[];
-  constructor() { }
+  companies: any;
+  constructor(private router: Router, private companyService: CompanyService) { }
 
   ngOnInit() {
-    this.companies = [
-      {
-        id: 1,
-        name: 'Colliers Internetional',
-        city:'Sydney',
-        email:'wilkins.liang@colliers.com'
-      },
-      {
-        id: 2,
-        name: '2e System',
-        city:'Melbourne',
-        email:'wilkins.liang@2e.com'
-      },
-      {
-        id: 3,
-        name: 'IBM Australia',
-        city:'Sydney',
-        email:'wilkins.liang@ibm.com'
-      },
-      {
-        id: 4,
-        name: 'Astrazeneca',
-        city:'Sydney',
-        email:'wilkins.liang@az.com'
-      }
-    ];
+    this.getCompanies();
   }
 
-  editCompany(companyId){
-    console.log('edit -> '+companyId);
+  editCompany(companyId) {
+    console.log('edit -> ' + companyId);
+    this.router.navigate(['/company/edit', companyId]);
   }
 
-  deleteCompany(companyId){
-    console.log('delete -> '+companyId);
+  deleteCompany(companyId) {
+    console.log('delete -> ' + companyId);
+    this.companyService.deleteComapny(companyId).subscribe(
+      () => this.getCompanies()
+    );
+  }
+
+  private getCompanies() {
+    this.companyService.getCompanies().subscribe(
+      companies => this.companies = companies
+    );
   }
 }

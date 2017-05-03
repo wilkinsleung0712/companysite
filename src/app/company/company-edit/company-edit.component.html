@@ -1,4 +1,33 @@
-<p>
-  company-edit works!
-  {{company|json}}
-</p>
+<div class="container">
+  <p>
+    company-edit works! {{company|json}}
+    state! {{companyForm.status |json}}
+  </p>
+
+  <form [formGroup]="companyForm">
+    <div class="form-group">
+      <label class="label" name="name">Name</label>
+      <input type="text" class="form-control" name="name" formControlName="name" />
+    </div>
+
+    <div class="form-group">
+      <label for="email" name="email" class="label">Email</label>
+      <input type="text" class="form-control" name="email" formControlName="email" />
+    </div>
+
+
+    <div class="form-group">
+      <label for="phone" name="phone" class="label">Phone</label>
+      <input type="text" class="form-control" name="phone" formControlName="phone" />
+    </div>
+
+    <div class="form-group">
+      <button type="button" class="btn btn-primary btn-inline" (click)="Submit()" [disabled]="!companyForm.valid">
+        Save
+      </button>
+      <button type="button" class="btn btn-danger" (click)="Cancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

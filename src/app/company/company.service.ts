@@ -1,3 +1,4 @@
+import { Company } from './../model/Company';
 import { Injectable } from '@angular/core';
 import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs/Observable";
@@ -45,6 +46,9 @@ export class CompanyService {
     return this.http.delete(`${this.API_BASE}/company/${companyId}`).map(this.extractData).catch(this.errorHandler);
   }
 
+  private saveCompany(company:Company){
+    // return this.http.put(`${this.API_BASE}/company/${companyId}`, String)s
+  }
 
   private extractData(response:Response){
     let body = response.json();

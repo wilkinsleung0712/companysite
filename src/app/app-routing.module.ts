@@ -6,7 +6,9 @@ import { CompanyListComponent } from './company/company-list/company-list.compon
 const routes: Routes = [
   {
     path: '',
-    children: []
+    redirectTo:'company-list',
+    pathMatch:'full'
+    // children: []
   },
   {
     path:'company-list',component:CompanyListComponent

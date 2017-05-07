@@ -15,13 +15,19 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { CompanyAddComponent } from './company/company-add/company-add.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompanyListComponent,
     CompanyTableComponent,
-    CompanyEditComponent
+    CompanyEditComponent,
+    CompanyAddComponent,
+    NavigationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

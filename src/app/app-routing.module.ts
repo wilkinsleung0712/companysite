@@ -1,3 +1,4 @@
+import { CompanyAddComponent } from './company/company-add/company-add.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CompanyEditComponent } from './company/company-edit/company-edit.component';
@@ -6,7 +7,7 @@ import { CompanyListComponent } from './company/company-list/company-list.compon
 const routes: Routes = [
   {
     path: '',
-    redirectTo:'company-list',
+    redirectTo:'',
     pathMatch:'full'
     // children: []
   },
@@ -15,7 +16,13 @@ const routes: Routes = [
   },
   {
     path:'company/edit/:id',component:CompanyEditComponent
-  }
+  },
+  {
+    path:'company/add/new',component:CompanyAddComponent
+  },
+  // {
+  //   path:'aboutus',componenet:
+  // }
 ];
 
 @NgModule({

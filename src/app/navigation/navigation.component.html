@@ -1,0 +1,49 @@
+<div class="container">
+  <!--<div class="header clearfix">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Navbar</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav float-right">
+          <li class="nav-item">
+            <a class="btn btn-outline-success my-2 my-sm-0" routerLink="/company/add/new">Add</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>-->
+
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <div class="clearfix">
+      <a (click)="isCollapsed = true" class="navbar-brand" routerLink="{{brandMenu.path}}">
+       {{brandMenu.title}}
+      </a>
+      <button (click)="isCollapsed = !isCollapsed" class="navbar-toggler float-xs-right" type="button" aria-controls="bd-main-nav"
+        aria-label="Toggle navigation">
+        {{menuIcon}}
+      </button>
+    </div>
+    <div class="navbar-toggleable-xs navbar-collapse" id="bd-main-nav" [attr.aria-expanded]="!isCollapsed" [ngClass]="{collapse: isCollapsed}">
+      <ul class="nav navbar-nav">
+        <!--<li (click)="isCollapsed = true" class="nav-item" routerLinkActive="active">
+          <a class="navbar-brand hidden-xs-down" [routerLink]="[brandMenu.path]">yyy</a>
+        </li>-->
+        <li (click)="isCollapsed = true" *ngFor="let menuItem of menuItems" class="nav-item" routerLinkActive="active" [ngClass]="getMenuItemClasses(menuItem)">
+          <a class="nav-item nav-link" routerLink="{{menuItem.path}}" routerLinkActive="active">{{menuItem.title}}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

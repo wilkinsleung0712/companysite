@@ -1,0 +1,27 @@
+<p>
+  company-add works! {{companyForm.status}}
+  <br/> {{companyForm.value}}
+</p>
+<form [formGroup]="companyForm">
+  <div class="form-group">
+    <label for="name" class="label">Name</label>
+    <input type="text" class="form-control" name="name" formControlName="name">
+  </div>
+  <div class="form-group">
+    <label for="email" class="label">Email</label>
+    <input type="text" class="form-control" name="email" formControlName="email">
+  </div>
+  <div class="form-group">
+    <label for="phone" name="phone" class="label">Phone</label>
+    <input type="text" class="form-control" name="phone" formControlName="phone" />
+  </div>
+
+  <div class="form-group">
+    <button type="button" class="btn btn-primary btn-inline" (click)="SaveButton()" [disabled]="!companyForm.valid">
+        Save
+      </button>
+    <button type="button" class="btn btn-danger" (click)="CancelButton()">
+        Cancel
+      </button>
+  </div>
+</form>

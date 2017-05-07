@@ -40,9 +40,6 @@ export class CompanyEditComponent implements OnInit {
     });
   }
 
-  private Cancel(){
-    this.location.back();
-  }
 
   private prepareFormValue() {
     this.companyForm.setValue({
@@ -52,6 +49,9 @@ export class CompanyEditComponent implements OnInit {
     })
   }
 
+  private Cancel(){
+    this.location.back();
+  }
   private Submit() {
     // this.companyService.
   }

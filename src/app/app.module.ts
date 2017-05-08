@@ -1,7 +1,7 @@
 import { CompanyService } from './company/company.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,25 +18,24 @@ import 'rxjs/add/operator/catch';
 import { CompanyAddComponent } from './company/company-add/company-add.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoginComponent } from './login/login.component';
+import { CompanyModule } from './company/company.module';
+import { HomeComponent } from './home/home.component';
+import { PhotoModule } from './photo/photo.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompanyListComponent,
-    CompanyTableComponent,
-    CompanyEditComponent,
-    CompanyAddComponent,
     NavigationComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    CompanyModule,
+    PhotoModule
   ],
-  providers: [CompanyService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

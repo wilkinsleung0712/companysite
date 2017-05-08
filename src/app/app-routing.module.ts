@@ -3,26 +3,23 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CompanyEditComponent } from './company/company-edit/company-edit.component';
 import { CompanyListComponent } from './company/company-list/company-list.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo:'',
-    pathMatch:'full'
-    // children: []
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
-    path:'company-list',component:CompanyListComponent
+    path: 'company', loadChildren: 'app/company/company.module#CompanyModule'
   },
   {
-    path:'company/edit/:id',component:CompanyEditComponent
+    path: 'photo', loadChildren: 'app/photo/photo.module#PhotoModule'
   },
   {
-    path:'company/add/new',component:CompanyAddComponent
-  },
-  // {
-  //   path:'aboutus',componenet:
-  // }
+    path: 'home', component: HomeComponent
+  }
 ];
 
 @NgModule({

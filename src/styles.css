@@ -2,3 +2,13 @@
 .btn-inline {
     margin-right:5px;
 }
+
+body{    
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.jumbotron {
+    margin-top:0.5em;
+    margin-bottom: 0.5em;
+}

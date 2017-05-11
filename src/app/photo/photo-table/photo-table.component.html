@@ -1,0 +1,8 @@
+<div class="card mb-3" *ngFor="let photo of photos">
+  <img class="card-img-top" src="./assets/static/images/{{photo.imageName|lowercase}}.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">{{photo.title}}</h4>
+    <p class="card-text">{{photo.description}}</p>
+    <p class="card-text"><small class="text-muted">Last updated on {{photo.updateDate?0:1 | date}}</small></p>
+  </div>
+</div>

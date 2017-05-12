@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PhotoComponent } from './photo.component';
 import { PhotoListComponent } from './photo-list/photo-list.component';
+import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,9 @@ const routes: Routes = [
     children:[
       {
         path:'',component:PhotoListComponent
+      },
+      {
+        path:'photo/view/:id', component:PhotoDetailComponent
       }
     ]
   }

@@ -12,6 +12,10 @@ export class PhotoService {
   getPhotoList() {
     return this.http.get(this.API_BASE).map(this.extractData).catch(this.errorHandler);
   }
+
+  getPhoto(photoId:number){
+    return this.http.get(`${this.API_BASE}/`+photoId).map(this.extractData).catch(this.errorHandler);
+  }
   
   private extractData(response: Response) {
     let body = response.json();

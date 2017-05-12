@@ -1,0 +1,17 @@
+<!--{{photo|json}}-->
+<div class="row" *ngIf="photo">
+  <!--<div class="col-8">-->
+  <img class="col-8" src="./assets/static/images/{{photo.imageName|lowercase}}.jpg" />
+  <!--</div>-->
+  <div class="col-4">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">{{photo.photoName}}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{{photo.created}}</h6>
+        <p class="card-text">{{photo.description}}</p>
+        <a href="#" ng-click="backButton()" class="btn btn-primary">Back</a>
+        <!--<a href="#" class="card-link">Another link</a>-->
+      </div>
+    </div>
+  </div>
+</div>

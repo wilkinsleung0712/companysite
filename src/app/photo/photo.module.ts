@@ -7,6 +7,7 @@ import { PhotoComponent } from './photo.component';
 import { HttpModule } from '@angular/http';
 import { PhotoTableComponent } from './photo-table/photo-table.component';
 import { RouterModule } from '@angular/router';
+import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { RouterModule } from '@angular/router';
     HttpModule,
     RouterModule
   ],
-  declarations: [PhotoComponent, PhotoListComponent, PhotoTableComponent]
+  declarations: [PhotoComponent, PhotoListComponent, PhotoTableComponent, PhotoDetailComponent]
 })
 export class PhotoModule { }
